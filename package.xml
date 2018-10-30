@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>ego_noise_monitor</name>
+  <version>0.0.0</version>
+  <description>The ego_noise_monitor package monitors noise sources on the robot
+    and publishes information on the noise level and the source of location.
+  </description>
+  <maintainer email="einig@informatik.uni-hamburg.de">Lasse Einig</maintainer>
+  <license>GPL-3.0</license>
+  <url>https://github.com/einig/ego_noise_monitor</url>
+  <author>Lasse Einig</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>roscpp</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>message_generation</build_depend>
+
+  <build_export_depend>roscpp</build_export_depend>
+  <build_export_depend>rospy</build_export_depend>
+  <build_export_depend>std_msgs</build_export_depend>
+
+  <exec_depend>message_runtime</exec_depend>
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+
+  <export>
+  </export>
+</package>
