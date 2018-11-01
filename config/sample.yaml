@@ -1,0 +1,11 @@
+robot_name: sample_robot
+ego_noise_sources:
+  - name: left_wheel
+    type: motor
+    frame: l_wheel
+  - name: right_wheel
+    type: motor
+    frame: r_wheel
+  - name: cpu_fan
+    type: fan
+    frame: cfan

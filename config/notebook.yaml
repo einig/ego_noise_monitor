@@ -1,0 +1,5 @@
+robot_name: notebook
+ego_noise_sources:
+  - name: cpu_fan
+    type: fan
+    frame: cfan
