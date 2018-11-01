@@ -12,10 +12,11 @@ set(SOURCE_FILES
 )
 
 find_package(catkin REQUIRED COMPONENTS
-  roscpp
   rospy
+  roscpp
   std_msgs
   message_generation
+  portaudio_transport
 )
 
 #add_message_files(
@@ -30,7 +31,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES ${PROJECT_NAME}
-  CATKIN_DEPENDS roscpp message_runtime
+  CATKIN_DEPENDS rospy roscpp message_runtime portaudio_transport
 )
 
 include_directories(
@@ -38,13 +39,13 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
-add_library(${PROJECT_NAME}_lib ${SOURCE_FILES} ${HEADERS})
-add_dependencies(${PROJECT_NAME}_lib ${catkin_EXPORTED_TARGETS} ${${PROJECT_NAME}_EXPORTED_TARGETS})
-target_link_libraries(${PROJECT_NAME}_lib ${catkin_LIBRARIES})
+add_library(${PROJECT_NAME} ${SOURCE_FILES} ${HEADERS})
+add_dependencies(${PROJECT_NAME} ${catkin_EXPORTED_TARGETS} ${${PROJECT_NAME}_EXPORTED_TARGETS})
+target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES})
 
 add_executable(${PROJECT_NAME}_node src/ego_noise_monitor_node.cpp)
 add_dependencies(${PROJECT_NAME}_node ${catkin_EXPORTED_TARGETS})
 target_link_libraries(${PROJECT_NAME}_node
   ${catkin_LIBRARIES}
-  ${PROJECT_NAME}_lib
+  ${PROJECT_NAME}
 )
