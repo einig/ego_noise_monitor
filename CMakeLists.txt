@@ -19,14 +19,15 @@ find_package(catkin REQUIRED COMPONENTS
   portaudio_transport
 )
 
-#add_message_files(
-#  FILES
-#)
+add_message_files(
+  FILES
+  EgoNoiseLoad.msg
+)
 
-# generate_messages(
-#   DEPENDENCIES
-#   std_msgs
-# )
+generate_messages(
+  DEPENDENCIES
+  std_msgs
+)
 
 catkin_package(
   INCLUDE_DIRS include
