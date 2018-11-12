@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+	<node name="ego_noise_monitor_tams_pr2_c2" pkg="ego_noise_monitor" type="ego_noise_monitor_node" output="screen">
+		<rosparam command="load" file="$(find ego_noise_monitor)/config/tams-pr2-c2.yaml" />
+	</node>
+</launch>

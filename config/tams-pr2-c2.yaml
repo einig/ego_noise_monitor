@@ -1,0 +1,13 @@
+robot_name: tams-pr2-c2
+ego_noise_sources:
+# Yet to determine which one is cpu and which is power unit
+  - name: cpu_fan_c2
+    type: fan
+    file: /sys/class/hwmon/hwmon1/fan2_input
+    field: UNUSEDFORNOW
+    frame_id: cpu_fan_c2
+  - name: power_fan_c2
+    type: fan
+    file: /sys/class/hwmon/hwmon1/fan5_input
+    field: UNUSEDFORNOW
+    frame_id: power_fan_c2
