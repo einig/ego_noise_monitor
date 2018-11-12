@@ -2,4 +2,6 @@ robot_name: notebook
 ego_noise_sources:
   - name: cpu_fan
     type: fan
-    frame: cfan
+    file: /sys/class/hwmon/hwmon2/fan1_input
+    field: UNUSEDFORNOW
+    frame_id: cfan
