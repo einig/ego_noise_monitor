@@ -17,11 +17,14 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   message_generation
   portaudio_transport
+  topic_tools
+  ros_type_introspection
 )
 
 add_message_files(
   FILES
   EgoNoiseLoad.msg
+  EgoNoiseArray.msg
 )
 
 generate_messages(

@@ -11,3 +11,13 @@ ego_noise_sources:
     file: /sys/class/hwmon/hwmon1/fan5_input
     field: UNUSEDFORNOW
     frame_id: power_fan_c1
+  - name: topic_fan
+    type: fan
+    topic: /diagnostics
+    key: Base Fan Speed
+    frame_id: base_fan
+  - name: br_caster_r_wheel_motor
+    type: motor
+    topic: /diagnostics
+    key: Supply Current
+    frame_id: br_caster_r_wheel_motor

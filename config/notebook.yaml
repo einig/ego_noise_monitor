@@ -5,3 +5,25 @@ ego_noise_sources:
     file: /sys/class/hwmon/hwmon2/fan1_input
     field: UNUSEDFORNOW
     frame_id: cfan
+  - name: base_fan
+    type: fan
+    device: Power board 1090
+    key: Base Fan Speed
+    frame_id: base_fan
+  - name: br_caster_r_wheel_motor
+    type: motor
+    device: EtherCAT Device (br_caster_r_wheel_motor)
+    key: Supply Current
+    frame_id: br_caster_r_wheel_motor
+
+
+#  - name: topic_fan
+#    type: fan
+#    topic: /diagnostics
+#    key: Base Fan Speed
+#    frame_id: base_fan
+#  - name: br_caster_r_wheel_motor
+#    type: motor
+#    topic: /diagnostics
+#    key: Supply Current
+#    frame_id: br_caster_r_wheel_motor
