@@ -11,4 +11,4 @@ uint8 type
 
 # Current load
 # RPM for FAN
-uint16 load
+float32 load
