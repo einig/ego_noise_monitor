@@ -11,53 +11,53 @@ ego_noise_sources:
     file: /sys/class/hwmon/hwmon1/fan5_input
     field: UNUSEDFORNOW
     frame_id: power_fan_c1
-#  - name: base_fan
-#    type: fan
-#    device: Power board 1090
-#    key: Base Fan Speed
-#    frame_id: base_fan
-#  - name: head_tilt_motor
-#    type: motor
-#    topic: /diagnostics
-#    key: Programmed pwm value
-#    frame_id: head_tilt_motor
-#  - name: head_pan_motor
-#    type: motor
-#    topic: /diagnostics
-#    key: Programmed pwm value
-#    frame_id: head_pan_motor
-#  - name: head_tilt_motor
-#    type: motor
-#    topic: /diagnostics
-#    key: Programmed current
-#    frame_id: head_tilt_motor
-#  - name: head_pan_motor
-#    type: motor
-#    topic: /diagnostics
-#    key: Programmed current
-#    frame_id: head_pan_motor
-#  - name: head_tilt_motor
-#    type: motor
-#    topic: /diagnostics
-#    key: Measured current
-#    frame_id: head_tilt_motor
-#  - name: head_pan_motor
-#    type: motor
-#    topic: /diagnostics
-#    key: Measured current
-#    frame_id: head_pan_motor
-#  - name: torso_lift_motor
-#    type: motor
-#    topic: /diagnostics
-#    key: Programmed pwm value
-#    frame_id: torso_list_motor
-#  - name: torso_lift_motor
-#    type: motor
-#    topic: /diagnostics
-#    key: Programmed current
-#    frame_id: torso_list_motor
-#  - name: torso_lift_motor
-#    type: motor
-#    topic: /diagnostics
-#    key: Measured current
-#    frame_id: torso_list_motor
+  - name: base_fan
+    type: fan
+    device: Power board 1090
+    key: Base Fan Speed
+    frame_id: base_fan
+  - name: head_tilt_motor
+    type: motor
+    device: EtherCAT Device head_tilt_motor()
+    key: Programmed pwm value
+    frame_id: head_tilt_motor
+  - name: head_pan_motor
+    type: motor
+    device: EtherCAT Device (head_tilt_motor)
+    key: Programmed pwm value
+    frame_id: head_pan_motor
+  - name: head_tilt_motor
+    type: motor
+    device: EtherCAT Device (head_tilt_motor)
+    key: Programmed current
+    frame_id: head_tilt_motor
+  - name: head_pan_motor
+    type: motor
+    device: EtherCAT Device (head_pan_motor)
+    key: Programmed current
+    frame_id: head_pan_motor
+  - name: head_tilt_motor
+    type: motor
+    device: EtherCAT Device (head_pan_motor)
+    key: Measured current
+    frame_id: head_tilt_motor
+  - name: head_pan_motor
+    type: motor
+    device: EtherCAT Device (head_pan_motor)
+    key: Measured current
+    frame_id: head_pan_motor
+  - name: torso_lift_motor
+    type: motor
+    device: EtherCAT Device (torso_lift_motor)
+    key: Programmed pwm value
+    frame_id: torso_lift_motor
+  - name: torso_lift_motor
+    type: motor
+    device: EtherCAT Device (torso_lift_motor)
+    key: Programmed current
+    frame_id: torso_lift_motor
+  - name: torso_lift_motor
+    type: motor
+    device: EtherCAT Device (torso_lift_motor)
+    key: Measured current
+    frame_id: torso_lift_motor

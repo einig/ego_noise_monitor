@@ -63,7 +63,7 @@ void EgoNoiseMonitor::DiagCallback(const diagnostic_msgs::DiagnosticArray::Const
 					if (key_value.key.compare(ns_diag->key_) == 0) {
 						ns_diag->load_ = std::stof(key_value.value);
 						ns_diag->stamp_ = diag_msg->header.stamp;
-						//ROS_WARN("%s -- %f", ns_diag->name_.c_str(), ns_diag->load_);
+						ROS_ERROR("%s -- %f", ns_diag->name_.c_str(), ns_diag->load_);
 					}
 				}
 			}

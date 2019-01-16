@@ -48,18 +48,21 @@ int main(int argc, char **argv) {
 		if (parse_file == true) {
 			try {
 				egoNoiseMonitor->AddNoiseSource(new NoiseSourceSystem(ns["name"], NoiseStringToEnum(ns["type"]), ns["frame_id"], ns["file"], ns["field"]));
+				ROS_INFO("Created SystemSource: %s", static_cast<std::string>(ns["name"]).c_str());
 			} catch (const std::string& ex) {
 				ROS_WARN("Could not create NoiseSource %s from config\n\t%s", static_cast<std::string>(ns["name"]).c_str(), ex.c_str());
 			}
 		} else if (parse_topic == true) {
 			try {
 				egoNoiseMonitor->AddNoiseSource(new NoiseSourceTopic(ns["name"], NoiseStringToEnum(ns["type"]), ns["frame_id"], ns["topic"], ns["key"]));
+				ROS_INFO("Created TopicSource: %s", static_cast<std::string>(ns["name"]).c_str());
 			} catch (const std::string& ex) {
 				ROS_WARN("Could not create NoiseSource %s from config\n\t%s", static_cast<std::string>(ns["name"]).c_str(), ex.c_str());
 			}
 		} else if (parse_diag == true) {
 			try {
 				egoNoiseMonitor->AddNoiseSource(new NoiseSourceDiag(ns["name"], NoiseStringToEnum(ns["type"]), ns["frame_id"], ns["device"], ns["key"]));
+				ROS_INFO("Created DiagSource: %s", static_cast<std::string>(ns["name"]).c_str());
 			} catch (const std::string& ex) {
 				ROS_WARN("Could not create NoiseSource %s from config\n\t%s", static_cast<std::string>(ns["name"]).c_str(), ex.c_str());
 			}
@@ -106,14 +109,11 @@ int main(int argc, char **argv) {
 		}
 	}
 
-	ROS_WARN("Exited");
-
 	//TODO: spinner count = topic_sources + 2?
 	ros::AsyncSpinner spinner(4);
 	spinner.start();
 
 	while ((pnh.ok()) && (ros::ok)) {
-		ROS_INFO("Node still running");
 		egoNoiseMonitor->PublishLoad();
 		publish_rate.sleep();
 	}
