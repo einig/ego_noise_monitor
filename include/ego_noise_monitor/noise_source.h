@@ -63,7 +63,7 @@ struct NoiseSourceSystem : NoiseSource {
 	std::string file_;
 	std::string field_;
 
-	NoiseSourceSystem(std::string name, NoiseType noise_type, std::string frame_id, std::string file, std::string field) :
+	NoiseSourceSystem(std::string name, NoiseType noise_type_, std::string frame_id, std::string file, std::string field) :
 					NoiseSource(name, noise_type_, SYSTEM, frame_id), file_(file), field_(field) {}
 	virtual ~NoiseSourceSystem() {}
 };
